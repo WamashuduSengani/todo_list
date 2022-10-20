@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'home_screen.dart';
 
 void main() {
   runApp(const TodoListApp());
@@ -9,10 +11,14 @@ class TodoListApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Todo List")),
-      body: const Text("HOME SCREEN"),
+    SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
+    );
+    
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "My Todo List",
+      home: HomeScreen(),
     );
   }
 }
-
