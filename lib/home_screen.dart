@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:todo_list/widgets/todo_item.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,6 +19,28 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             searchBox(),
+            Expanded(
+              child: ListView(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 50, bottom: 20),
+                    child: const Text(
+                      "My ToDo's",
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  const MyTodoList(),
+                  const MyTodoList(),
+                  const MyTodoList(),
+                  const MyTodoList(),
+                  const MyTodoList(),
+                  const MyTodoList(),
+                  const MyTodoList(),
+                  const MyTodoList(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -29,6 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
 // ignore: non_constant_identifier_names
 AppBar CreateAppBar() {
   return AppBar(
+    backgroundColor: Colors.grey,
     elevation: 0,
     title: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,7 +77,7 @@ AppBar CreateAppBar() {
 
 Widget searchBox() {
   return Container(
-    padding: const EdgeInsets.symmetric(horizontal: 15),
+    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(20),
